@@ -83,4 +83,5 @@ class DefaultFirebaseOptions {
     authDomain: 'bajaj-app-2e3e1.firebaseapp.com',
     storageBucket: 'bajaj-app-2e3e1.firebasestorage.app',
   );
+
 }
