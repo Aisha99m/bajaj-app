@@ -4,6 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 import '../providers/ride_provider.dart';
 
 class DriverFoundScreen extends StatelessWidget {
+  const DriverFoundScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<RideProvider>();

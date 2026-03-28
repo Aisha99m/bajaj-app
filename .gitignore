@@ -64,3 +64,4 @@ ios/.symlinks/
 # IDE
 .vscode/
 .idea/
+node_modules

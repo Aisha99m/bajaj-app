@@ -6,6 +6,8 @@ class RequestScreen extends StatelessWidget {
   final TextEditingController pickupController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
 
+  RequestScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

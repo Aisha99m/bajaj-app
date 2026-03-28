@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import '../providers/ride_provider.dart';
 
 class SearchingScreen extends StatelessWidget {
+  const SearchingScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final provider = context.watch<RideProvider>();
