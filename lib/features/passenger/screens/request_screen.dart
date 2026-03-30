@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/ride_provider.dart';
@@ -37,16 +38,18 @@ class RequestScreen extends StatelessWidget {
 
 ElevatedButton(
   onPressed: () async {
-    await firestore.createRide(
-      pickup: pickupController.text,
-      time: timeController.text,
-      phone: phoneController.text,
+    final provider = context.read<RideProvider>();
+
+    await provider.createRequest(
+      pickupController.text,
+      phoneController.text,
+      timeController.text,
     );
 
     Navigator.pushNamed(context, '/searching');
-        },
-      child: Text("Request Bajaj"),
-          )
+  },
+  child: Text("Request Bajaj"),
+)
           ],
         ),
       ),

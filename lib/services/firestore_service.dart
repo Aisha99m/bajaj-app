@@ -10,13 +10,14 @@ class FirestoreService {
     String? destination,
     String? notes,
   }) async {
-    await _db.collection('rides').add({
-      'pickup': pickup,
+    await _db.collection('ride_requests').add({
+      'pickupLocation': pickup,
       'time': time,
-      'phone': phone,
+      'passengerPhone': phone,
       'destination': destination ?? '',
       'notes': notes ?? '',
       'status': 'waiting',
+      'driverPhone': null,
       'createdAt': FieldValue.serverTimestamp(),
     });
   }

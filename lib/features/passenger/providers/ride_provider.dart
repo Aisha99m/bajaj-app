@@ -8,21 +8,22 @@ class RideProvider with ChangeNotifier {
   String status = "idle";
   String? driverPhone;
 
-  Future<void> createRequest(String pickup, String phone) async {
-    final doc = await _db.collection('ride_requests').add({
-      'pickupLocation': pickup,
-      'passengerPhone': phone,
-      'status': 'waiting',
-      'driverPhone': null,
-    });
+  Future<void> createRequest(String pickup, String phone, String time, String driverPhone) async {
+  final doc = await _db.collection('ride_requests').add({
+ 
+    'pickupLocation': pickup,
+    'passengerPhone': phone,
+    'time': time,
+    'status': 'waiting',
+    'driverPhone': driverPhone,
+  });
 
-    requestId = doc.id;
-    status = "waiting";
-    notifyListeners();
+  requestId = doc.id;
+  status = "waiting";
+  notifyListeners();
 
-    listenToRequest();
-  }
-
+  listenToRequest();
+}
   void listenToRequest() {
     if (requestId == null) return;
 
